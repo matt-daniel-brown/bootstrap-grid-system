@@ -1,0 +1,57 @@
+$_button-background-color: $action-color;
+$_button-background-color-hover: shade($action-color, 10%);
+$_button-background-color-active: shade($action-color, 20%);
+$_button-text-color: white;
+$_button-text-color-hover: shade($_button-text-color, 2%);
+$_button-text-color-active: shade($_button-text-color, 5%);
+
+#{$all-buttons}, .button {
+  appearance: none !important;
+  background-color: $_button-background-color;
+  border: 0;
+  border-radius: $base-border-radius;
+  color: white;
+  cursor: pointer;
+  display: inline-block;
+  font-family: $base-font-family;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  line-height: 1;
+  padding: $small-spacing $base-spacing;
+  text-align: center;
+  text-decoration: none !important;
+  transition: background-color $base-duration $base-timing, transform $base-duration $base-timing;
+  user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+
+  &:hover {
+    background-color: $_button-background-color-hover;
+    color: $_button-text-color-hover;
+    text-decoration: none !important;
+  }
+  &:active {
+    background-color: $_button-background-color-active;
+    color: $_button-text-color-active;
+    outline: none !important;
+    text-decoration: none !important;
+    transform: scale(0.98);
+  }
+
+  &:focus {
+    //outline: $focus-outline;
+    //outline-offset: $focus-outline-offset;
+    outline: none !important;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+
+    &:hover {
+      background-color: $_button-background-color;
+    }
+  }
+}

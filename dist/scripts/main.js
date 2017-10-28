@@ -1,0 +1,1 @@
+"use strict";$(document).ready(function(){function t(t){return $(".row").toggleClass("relPos"),t()}function n(t){return $(".row").animate({top:"50px"}),t()}function o(t){return $(".row").toggleClass("relPos"),t()}var r=$("#tabs-display-button"),e=$(".tab");r.on("click",function(){t(n(o(function(){e.toggle(100)})))})});
