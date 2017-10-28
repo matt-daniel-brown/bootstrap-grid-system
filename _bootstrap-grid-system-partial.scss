@@ -1,0 +1,20 @@
+/*
+ * This is the same as 'bootstrap-grid-system.scss',
+ * just as a SCSS partial instead of normal SCSS file
+ * to avoid being processed independently and generating
+ * a standalone CSS output file.
+ */
+
+
+// Variable that defines whether or not to include the Bootstrap reboot.
+//    - By default, don't import Bootstrap Reboot.
+//    - This variable, if changed externally,
+//    - must be defined before importing this file.
+$_include-reboot: false !default;
+
+//  @TODO: Refactor to include the conditional import of 'reboot' inside a global mixin that accepts parameters.
+
+@mixin includeReboot {
+  @import "lib/bootstrap-reboot";
+}
+@import "lib/bootstrap-grid";
