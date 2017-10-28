@@ -1,2 +1,37 @@
-//@import "lib/bootstrap-reboot";
+/*
+ * This is the same as '_bootstrap-grid-system-partial.scss',
+ * except that it will be processed and output
+ * a standalone CSS output file.
+ * To avoid this, delete this file and simply import
+ * '_bootstrap-grid-system-partial.scss' inside another Scss file.
+
+    {{ EXAMPLE IN EITHER USE SCENARIO: }}
+
+    (inside external scss file ... ):
+
+    // Set following variable to 'TRUE' to include the reboot styles, otherwise the following line can be omitted..
+    $_include-reboot: true;
+    // Import the grid system.
+    @import "bootstrap-grid-system-partial";
+
+ */
+
+
+// Variable that defines whether or not to include the Bootstrap reboot.
+//    - By default, don't import Bootstrap Reboot.
+//    - This variable, if changed externally,
+//    - must be defined before importing this file.
+$_include-reboot: false !default;
+@import "lib/bootstrap-reboot";
 @import "lib/bootstrap-grid";
+
+// Main bootstrap grid system mixin
+@mixin include-bootstrap-grid-system {
+  // Conditionally include bootstrap reboot mixin
+  @if $_include-reboot == true { @include bootstrapReboot; }
+  // Include bootstrap grid mixin
+  @include bootstrapGrid;
+}
+
+// This mixin-based structure allows for conditional import of the bootstrap reboot styles.
+@include include-bootstrap-grid-system;
