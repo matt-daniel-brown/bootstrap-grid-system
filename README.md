@@ -1,5 +1,5 @@
 # Bootstrap Grid System
-Extraction of the Twitter Bootstrap grid system (and only the grid system) in SCSS form.
+Extraction of the Twitter Bootstrap grid system (and only the grid system) in Scss form.
 
 ## Installation
 #### First, copy the files into your project.
